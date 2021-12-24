@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Run PWD
         run: |
-          echo $USER
           whoami
+          echo $USER
           groups
 
 #      - uses: actions/checkout@v2
