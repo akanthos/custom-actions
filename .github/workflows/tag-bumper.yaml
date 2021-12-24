@@ -13,7 +13,8 @@ jobs:
     steps:
       - name: Run PWD
         run: |
-          echo $GITHUB_WORKSPACE
-          cat values.yaml
+          echo $USER
+          whoami
+          groups
 
-      - uses: actions/checkout@v2
+#      - uses: actions/checkout@v2
