@@ -18,3 +18,6 @@ jobs:
           groups
 
       - uses: actions/checkout@v2
+
+      - name: ls repo
+        run: ls -a
