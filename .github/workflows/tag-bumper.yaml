@@ -11,9 +11,9 @@ jobs:
     container:
       image: mikefarah/yq
     steps:
-      - uses: actions/checkout@v2
-
       - name: Run PWD
         run: |
           echo $GITHUB_WORKSPACE
           cat values.yaml
+
+      - uses: actions/checkout@v2
