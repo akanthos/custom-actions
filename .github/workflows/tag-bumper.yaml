@@ -1,0 +1,19 @@
+name: Manipulate YAML values
+on:
+  push:
+    branches:
+      - main
+#  repository_dispatch:
+#    types: [my-event]
+jobs:
+  myEvent:
+    runs-on: self-hosted
+    container:
+      image: mikefarah/yq
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run PWD
+        run: |
+          git version 
+          ls
