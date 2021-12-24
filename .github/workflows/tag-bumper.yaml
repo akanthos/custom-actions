@@ -18,6 +18,8 @@ jobs:
           groups
 
       - uses: actions/checkout@v2
+        with:
+          path: reporepo
 
       - name: ls repo
-        run: ls -a
+        run: cd reporepo; ls -a
