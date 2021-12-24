@@ -8,11 +8,10 @@ on:
 jobs:
   myEvent:
     runs-on: self-hosted
-    container:
-      image: mikefarah/yq
     steps:
       - uses: actions/checkout@v2
 
       - name: Run PWD
         run: |
+          echo $GITHUB_WORKSPACE
           cat values.yaml
