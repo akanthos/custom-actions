@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       semVersion:
-        description: The semantic version to be tagged and built.
+        description: 'Semantic version'
         required: true
 jobs:
   myEvent:
