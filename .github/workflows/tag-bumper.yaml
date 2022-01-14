@@ -4,6 +4,10 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      semVersion:
+        description: The semantic version to be tagged and built.
+        required: true
 jobs:
   myEvent:
     runs-on: self-hosted
