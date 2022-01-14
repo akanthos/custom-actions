@@ -8,6 +8,9 @@ on:
       semVersion:
         description: 'Semantic version'
         required: true
+      anotherThing:
+        description: 'another parameter'
+        required: true
 jobs:
   myEvent:
     runs-on: self-hosted
