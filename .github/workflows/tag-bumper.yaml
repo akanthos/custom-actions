@@ -3,11 +3,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-    inputs:
-      semVersion:
-        description: 'Semantic version'
-        required: true
 jobs:
   myEvent:
     runs-on: self-hosted
