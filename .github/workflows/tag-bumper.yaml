@@ -1,31 +1,9 @@
-name: Manipulate YAML values
+name: Try custom action
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
-    inputs:
-      semVersion:
-        description: 'Semantic version'
-        required: true
-      anotherThing:
-        description: 'another parameter'
-        required: true
 jobs:
   myEvent:
-    runs-on: self-hosted
-    container:
-      image: mikefarah/yq
+    runs-on: ubuntu-latest
     steps:
-      - name: Run PWD
-        run: |
-          whoami
-          echo $USER
-          groups
-
-      - uses: actions/checkout@v2
-        with:
-          path: reporepo
-
-      - name: ls repo
-        run: cd reporepo; ls -a
+      - name: Try custom action
+        uses: akanthos/MyCustomAction@main
