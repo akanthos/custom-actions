@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Try custom action
-        uses: akanthos/MyCustomAction@main
+        uses: akanthos/MyCustomAction@world
         with:
           valueToPrint: salami
