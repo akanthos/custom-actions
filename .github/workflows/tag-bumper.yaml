@@ -7,3 +7,5 @@ jobs:
     steps:
       - name: Try custom action
         uses: akanthos/MyCustomAction@main
+        with:
+          valueToPrint: salami
