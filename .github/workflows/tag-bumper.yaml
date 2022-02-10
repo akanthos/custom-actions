@@ -10,7 +10,7 @@ on:
         description: Select action
         type: choice
         options:
-          - boostrap
+          - bootstrap
           - destroy
         default: bootstrap
         required: true
