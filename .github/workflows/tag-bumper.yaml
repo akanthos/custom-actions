@@ -10,8 +10,8 @@ on:
         description: Select action
         type: choice
         options:
-        - boostrap
-        - destroy
+          - boostrap
+          - destroy
         default: bootstrap
         required: true
 
