@@ -1,8 +1,11 @@
 name: Manipulate YAML values
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: the env
+        type: environment
+        required: true
 jobs:
   myEvent:
     runs-on: self-hosted
