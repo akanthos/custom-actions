@@ -1,4 +1,4 @@
-name: Build Java
+name: Build Java Docker
 on:
   workflow_dispatch:
   push:
@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    container: 3.8.6-eclipse-temurin-17
     steps:
       - uses: actions/checkout@v3
 
