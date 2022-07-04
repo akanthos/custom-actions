@@ -10,8 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
+          echo "Printing ls:"
           ls
+          echo "Printing pwd:"
           pwd
+          cd custom-actions
+          ls
       - uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
