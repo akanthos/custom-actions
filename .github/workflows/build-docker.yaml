@@ -1,0 +1,22 @@
+name: Build Java
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    container: 3.8.6-eclipse-temurin-17
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          file: ./src/main/docker/Dockerfile-cached.jvm
+          tags: quarkus/getting-started-jvm:v1.0.0
