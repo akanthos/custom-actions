@@ -18,12 +18,15 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      - run: |
-          ls
-          ls target/
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: .
           file: ./src/main/docker/Dockerfile.jvm
           tags: quarkus/getting-started-jvm:v1.0.0
+          push: false
