@@ -24,4 +24,5 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          file: ./src/main/docker/Dockerfile.jvm
           tags: quarkus/getting-started-jvm:v1.0.0
