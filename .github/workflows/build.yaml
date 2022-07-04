@@ -17,6 +17,9 @@ jobs:
           cache: 'maven'
       - name: Build with Maven
         run: mvn -B package --file pom.xml
+      - run: apt-get install tree
+      - run: tree target/
+
 
       - name: Build and push
         uses: docker/build-push-action@v3
