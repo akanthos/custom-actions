@@ -77,7 +77,7 @@
 ###
 FROM maven:3.8.6-eclipse-temurin-17 as build
 ADD pom.xml .
-RUN mvnw verify --fail-never
+RUN chmod +x ./mvnw && ./mvnw verify --fail-never
 
 ADD . .
 RUN mvn package
