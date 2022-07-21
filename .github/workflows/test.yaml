@@ -1,0 +1,10 @@
+name: Test Concurrency
+on:
+  repository_dispatch:
+    types: [ thanos-event ]
+jobs:
+  setenv:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: sleep 5
+      - run: echo "something"
