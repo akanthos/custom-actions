@@ -8,7 +8,7 @@ jobs:
       - name: Trigger stuff
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.MSC_GIT_CREATE_TAG_PUSH }}
+          token: ${{ secrets.TRIGGER_PAT }}
           repository: akanthos/custom-actions
           event-type: thanos-event
           client-payload: '{}'
@@ -18,7 +18,7 @@ jobs:
       - name: Trigger stuff
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.MSC_GIT_CREATE_TAG_PUSH }}
+          token: ${{ secrets.TRIGGER_PAT }}
           repository: akanthos/custom-actions
           event-type: thanos-event
           client-payload: '{}'
@@ -28,7 +28,7 @@ jobs:
       - name: Trigger stuff
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.MSC_GIT_CREATE_TAG_PUSH }}
+          token: ${{ secrets.TRIGGER_PAT }}
           repository: akanthos/custom-actions
           event-type: thanos-event
           client-payload: '{}'
@@ -38,7 +38,7 @@ jobs:
       - name: Trigger stuff
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.MSC_GIT_CREATE_TAG_PUSH }}
+          token: ${{ secrets.TRIGGER_PAT }}
           repository: akanthos/custom-actions
           event-type: thanos-event
           client-payload: '{}'
@@ -48,7 +48,7 @@ jobs:
       - name: Trigger stuff
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.MSC_GIT_CREATE_TAG_PUSH }}
+          token: ${{ secrets.TRIGGER_PAT }}
           repository: akanthos/custom-actions
           event-type: thanos-event
           client-payload: '{}'
