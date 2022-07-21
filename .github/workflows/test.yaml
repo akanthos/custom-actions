@@ -2,6 +2,8 @@ name: Test Concurrency
 on:
   repository_dispatch:
     types: [ thanos-event ]
+concurrency:
+  group: ${{ github.workflow }}
 jobs:
   setenv:
     runs-on: ubuntu-20.04
