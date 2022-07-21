@@ -1,0 +1,54 @@
+name: Test Concurrency
+on:
+  workflow_dispatch:
+jobs:
+  trigger1:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Trigger stuff
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.MSC_GIT_CREATE_TAG_PUSH }}
+          repository: akanthos/custom-actions
+          event-type: thanos-event
+          client-payload: '{}'
+  trigger2:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Trigger stuff
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.MSC_GIT_CREATE_TAG_PUSH }}
+          repository: akanthos/custom-actions
+          event-type: thanos-event
+          client-payload: '{}'
+  trigger3:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Trigger stuff
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.MSC_GIT_CREATE_TAG_PUSH }}
+          repository: akanthos/custom-actions
+          event-type: thanos-event
+          client-payload: '{}'
+  trigger4:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Trigger stuff
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.MSC_GIT_CREATE_TAG_PUSH }}
+          repository: akanthos/custom-actions
+          event-type: thanos-event
+          client-payload: '{}'
+  trigger5:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Trigger stuff
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.MSC_GIT_CREATE_TAG_PUSH }}
+          repository: akanthos/custom-actions
+          event-type: thanos-event
+          client-payload: '{}'
