@@ -1,0 +1,12 @@
+name: Test reusable workflow
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:      
+      - uses: actions/checkout@v2
+      - name: Setup BuildX
+        uses: docker/setup-buildx-action@v1
