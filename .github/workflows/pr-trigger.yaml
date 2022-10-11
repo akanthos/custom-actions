@@ -8,5 +8,5 @@ jobs:
   do-something:
     runs-on: ubuntu-latest
     steps:
-      - actions/checkout@v3
+      - uses: actions/checkout@v3
       - run: sleep 20
