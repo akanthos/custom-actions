@@ -1,0 +1,11 @@
+name: "Event-driven"
+
+on:
+  repository_dispatch:
+    types: [ draft-release ]
+
+jobs:
+  tf-rollout:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
