@@ -1,0 +1,23 @@
+name: "Needs matrix"
+
+on:
+  push:
+
+jobs:
+  create-matrix:
+    uses: ./.github/workflows/reusable-with-matrix.yaml
+    with:
+      environment: dev
+    secrets: 
+      FOO: ${{ secrets.FOO }}
+#     strategy:
+#       max-parallel: 1
+#       fail-fast: false
+#       matrix:
+#         layer:
+#           - "state"
+#           - "foundation"
+#           - "aks"
+
+
+       
