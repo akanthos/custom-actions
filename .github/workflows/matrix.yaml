@@ -2,6 +2,7 @@ name: "Needs matrix"
 
 on:
   push:
+  workflow_dispatch:
 
 jobs:
   create-matrix:
