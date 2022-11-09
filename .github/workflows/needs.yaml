@@ -15,21 +15,10 @@ jobs:
           - "foundation"
           - "aks"
     name: job-${{ matrix.layer }}
+    defaults:
+      run:
+        working-directory: layers/${{ matrix.layer}}
     steps:
        - uses: actions/checkout@v3
-       - run: ls -l ${{ matrix.layer }}
+       - run: echo "${{ github }}"
        
-#   use-matrix:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       max-parallel: 1
-#       fail-fast: false
-#       matrix:
-#         layer:
-#           - "state"
-#           - "foundation"
-#           - "aks"
-#     name: job-${{ matrix.layer }}
-#     steps:
-#        - uses: actions/checkout@v3
-#        - run: ls -l ${{ matrix.layer }}
