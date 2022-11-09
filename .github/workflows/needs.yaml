@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  plan:
+  create-matrix:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 1
@@ -14,10 +14,22 @@ jobs:
           - "state"
           - "foundation"
           - "aks"
-          - "databases"
-          - "playground"
-          - "applicationgateway"
     name: job-${{ matrix.layer }}
     steps:
        - uses: actions/checkout@v3
        - run: ls -l ${{ matrix.layer }}
+       
+#   use-matrix:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       max-parallel: 1
+#       fail-fast: false
+#       matrix:
+#         layer:
+#           - "state"
+#           - "foundation"
+#           - "aks"
+#     name: job-${{ matrix.layer }}
+#     steps:
+#        - uses: actions/checkout@v3
+#        - run: ls -l ${{ matrix.layer }}
