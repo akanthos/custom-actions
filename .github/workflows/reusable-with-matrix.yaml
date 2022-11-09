@@ -1,0 +1,24 @@
+name: "(R) Using matrix"
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: "The target environment to roll out infrastructure"
+        type: string
+        required: true
+    secrets:
+      FOO:
+        required: true
+
+env:
+  FPP: ${{ secrets.FOO }}
+
+jobs:
+  plan:
+    runs-on: [ self-hosted, azure ]
+    defaults:
+      run:
+        working-directory: layers/${{ matrix.layer }}
+    steps:
+      - uses: actions/checkout@v3
