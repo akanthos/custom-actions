@@ -1,0 +1,13 @@
+name: "Event trigger"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Draft release
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: draft-release
