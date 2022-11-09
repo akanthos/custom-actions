@@ -5,8 +5,10 @@ on:
   workflow_dispatch:
 
 jobs:
-   ReuseableMatrixJobForDeployment:
+   alljobs:
     strategy:
+      max-parallel: 1
+      fail-fast: false
       matrix:
         layer: [state, foundation, aks]
     uses: ./.github/workflows/reusable-with-matrix.yaml
