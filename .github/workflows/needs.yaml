@@ -20,5 +20,7 @@ jobs:
         working-directory: layers/${{ matrix.layer}}
     steps:
        - uses: actions/checkout@v3
-       - run: echo "$GITHUB_CONTEXT"
+       - run: |
+          echo "${{ github.workspace }}"
+
        
