@@ -16,7 +16,7 @@ env:
 
 jobs:
   plan:
-    runs-on: [ self-hosted, azure ]
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: layers/${{ matrix.layer }}
