@@ -5,7 +5,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  create-matrix:
+   ReuseableMatrixJobForDeployment:
+    strategy:
+      matrix:
+        layer: [state, foundation, aks]
     uses: ./.github/workflows/reusable-with-matrix.yaml
     with:
       environment: dev
