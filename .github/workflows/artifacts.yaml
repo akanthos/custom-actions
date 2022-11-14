@@ -16,6 +16,7 @@ jobs:
           name: "tfplan"
           path: test/file.txt
           retention-days: 3
+      - run: rm -rf test/
       - uses: actions/download-artifact@v3
         with:
           name: "tfplan"
