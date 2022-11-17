@@ -1,0 +1,17 @@
+name: "Triggers check"
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'foo/**'
+      - 'bar/**'
+      - '**/terraform-dhc.yaml'
+
+jobs:
+  plan:
+    name: "Plan"
+    runs-on: [ self-hosted, azure ]
+    steps:
+      - uses: actions/checkout@v3
