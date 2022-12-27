@@ -1,10 +1,10 @@
-name: "Manual release"
+name: "Matrix tricks"
 
 on:
   push:
 
 jobs:
-  release:
+  tricks:
     runs-on: ubuntu-latest
     strategy:
       matrix:
