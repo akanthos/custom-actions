@@ -1,14 +1,16 @@
 name: "Manual release"
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   release:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        env: ["dev", "int", "prd"]
+    env:
+      ENV: env-is-${{ matrix.env.uppercase }}
     steps:
-      - name: "Create a GitHub release"
-        uses: ncipollo/release-action@v1
-        with:
-          omitBodyDuringUpdate: true
-          allowUpdates: true
+      - run: |
+          echo $ENV
