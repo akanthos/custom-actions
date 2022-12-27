@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        env: ["dev", "int", "prd"]
+        environment: ["dev", "int", "prd"]
     env:
-      ENV: env-is-${{ matrix.env.uppercase }}
+      ENV: ${{ (matrix.environment == 'dev' && 'DEV') || ((matrix.environment == 'int' && 'INT') || 'PRD' ) }}
     steps:
       - run: |
           echo $ENV
