@@ -9,6 +9,7 @@ jobs:
       - run: exit 1
   
   work:
+    needs: guard
     runs-on: ubuntu-20.04
     steps:
       - run: echo "Hello"
