@@ -1,54 +1,15 @@
-name: Concurrency trigger
+name: Guard
 on:
   workflow_dispatch:
 jobs:
-  trigger1:
+  guard:
+    runs-on: ubuntu-20.04
+    if: !startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - run: exit 1
+  
+  work:
     runs-on: ubuntu-20.04
     steps:
-      - name: Trigger stuff
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.TRIGGER_PAT }}
-          repository: akanthos/custom-actions
-          event-type: thanos-event
-          client-payload: '{}'
-  trigger2:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Trigger stuff
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.TRIGGER_PAT }}
-          repository: akanthos/custom-actions
-          event-type: thanos-event
-          client-payload: '{}'
-  trigger3:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Trigger stuff
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.TRIGGER_PAT }}
-          repository: akanthos/custom-actions
-          event-type: thanos-event
-          client-payload: '{}'
-  trigger4:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Trigger stuff
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.TRIGGER_PAT }}
-          repository: akanthos/custom-actions
-          event-type: thanos-event
-          client-payload: '{}'
-  trigger5:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Trigger stuff
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.TRIGGER_PAT }}
-          repository: akanthos/custom-actions
-          event-type: thanos-event
-          client-payload: '{}'
+      run: echo "Hello"
+
