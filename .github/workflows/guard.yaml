@@ -11,5 +11,5 @@ jobs:
   work:
     runs-on: ubuntu-20.04
     steps:
-      run: echo "Hello"
+      - run: echo "Hello"
 
