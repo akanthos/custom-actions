@@ -9,15 +9,20 @@ on:
         required: true
   
 jobs:
+  tag:
+    name: "Set tag output"
+    runs-on: [ self-hosted, azure ]
+    steps:
+      - name: Set output
+        run: echo "tag=${GITHUB_SHA:0:8}" >> $GITHUB_OUTPUT
+
   artifacts:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
       - uses: hmarr/debug-action@v2
       - run: |
-          mkdir test
-          echo "foo" >> test/file.txt
-          echo "bar" >> test/file.txt
+          echo "${{ jobs.tag.outputs.tag }}"
 #       - uses: actions/upload-artifact@v3
 #         with:
 #           name: "tfplan"
