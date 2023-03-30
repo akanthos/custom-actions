@@ -11,7 +11,7 @@ on:
 jobs:
   tag:
     name: "Set tag output"
-    runs-on: [ self-hosted, azure ]
+    runs-on: ubuntu-latest
     steps:
       - name: Set output
         run: echo "TAG=${GITHUB_SHA:0:8}" >> $GITHUB_OUTPUT
