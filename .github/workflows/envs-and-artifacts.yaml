@@ -3,7 +3,7 @@ name: "Try environments and artifacts"
 on:
   workflow_dispatch:
     inputs:
-      env:
+      environment:
         type: environment
   
 jobs:
