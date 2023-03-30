@@ -9,7 +9,7 @@ on:
 jobs:
   artifacts:
     runs-on: ubuntu-latest
-    environment: inputs.environment
+    environment: int
     steps:
       - uses: hmarr/debug-action@v2
       - run: |
