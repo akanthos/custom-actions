@@ -2,14 +2,13 @@ name: "Try environments and artifacts"
 
 on:
   workflow_dispatch:
-#     inputs:
-#       environment:
-#         type: environment
+    inputs:
+      environment:
+        type: environment
   
 jobs:
   artifacts:
     runs-on: ubuntu-latest
-    environment: int
     steps:
       - uses: hmarr/debug-action@v2
       - run: |
