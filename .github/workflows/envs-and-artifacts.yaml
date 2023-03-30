@@ -3,6 +3,9 @@ name: "Try environments and artifacts"
 on:
   workflow_dispatch:
     inputs:
+      tag:
+        type: string
+        required: false
       environment:
         description: 'Environment to run tests against'
         type: environment
@@ -17,7 +20,12 @@ jobs:
     steps:
       - name: Set output
         id: tag
-        run: echo "tag=abcd" >> $GITHUB_OUTPUT
+        run: |
+          if [ ${{ github.event.inputs.tag }} != '' ]; then
+            echo "tag=${{ github.event.inputs.tag }}" >> $GITHUB_OUTPUT
+          else
+            echo "tag=${GITHUB_SHA:0:8}" >> $GITHUB_OUTPUT
+          fi
 
   artifacts:
     needs: [tag]
