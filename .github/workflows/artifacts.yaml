@@ -1,7 +1,10 @@
-name: "Try artifacts"
+name: "Try environments and artifacts"
 
 on:
-  push:
+  workflow_dispatch:
+    inputs:
+      env:
+        type: environment
   
 jobs:
   artifacts:
@@ -11,14 +14,14 @@ jobs:
           mkdir test
           echo "foo" >> test/file.txt
           echo "bar" >> test/file.txt
-      - uses: actions/upload-artifact@v3
-        with:
-          name: "tfplan"
-          path: test/file.txt
-          retention-days: 3
-      - run: rm -rf test/
-      - uses: actions/download-artifact@v3
-        with:
-          name: "tfplan"
-          path: test
-      - run: cat test/file.txt
+#       - uses: actions/upload-artifact@v3
+#         with:
+#           name: "tfplan"
+#           path: test/file.txt
+#           retention-days: 3
+#       - run: rm -rf test/
+#       - uses: actions/download-artifact@v3
+#         with:
+#           name: "tfplan"
+#           path: test
+#       - run: cat test/file.txt
